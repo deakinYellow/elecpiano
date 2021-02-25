@@ -82,7 +82,6 @@ int main(int argc, char **argv ){
   // Create the audio driver. The synthesizer starts playing as soon as the driver is created.
   adriver = new_fluid_audio_driver( settings, g_synth );
 
-
   ///Load a SoundFont and reset presets (so that new instruments * get used from the SoundFont)
   std::string sf2_file_name( argv[1] );
   int sfont_id = fluid_synth_sfload( g_synth, sf2_file_name.c_str() , 1);
@@ -103,7 +102,6 @@ int main(int argc, char **argv ){
   fluid_player_play( midi_player );
   //停止播放线程
   fluid_player_join( midi_player );
-
   //随机播放
   random_play( g_synth );
 
@@ -123,5 +121,3 @@ err:
   delete_fluid_player( midi_player);
   return 0;
 }
-
-
